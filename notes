@@ -129,3 +129,24 @@ plant_path  DELETE  /:id       RentitWeb.PlantController :delete
 
     assert visible_in_page? ~r/Your taxi will arrive in \d+ minutes/
     
+
+
+
+    Setting up VueJS
+
+1. npm install --save vue
+    - installation of the library vue
+    - --save : add the dependency on the projects file package.json
+
+2.  configure brunchjs to serve VueJS
+    - Open the file brunch-config.js
+    - add below code
+exports.config = {
+  ...
+  npm: {
+    enabled: true,
+    aliases: { vue: "vue/dist/vue.common.js" }
+  }
+}
+
+==> git add -A && git commit -m "VueJS properly configured with brunchjs"
