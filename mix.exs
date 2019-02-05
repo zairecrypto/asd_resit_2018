@@ -9,6 +9,7 @@ defmodule Rentit.Mixfile do
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
       start_permanent: Mix.env == :prod,
+      preferred_cli_env: ["white_bread.run": :test],
       aliases: aliases(),
       deps: deps()
     ]
@@ -41,7 +42,9 @@ defmodule Rentit.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"}, 
-      {:plug_cowboy, "~> 1.0"}
+      {:plug_cowboy, "~> 1.0"}, 
+      {:white_bread, "~> 4.3", only: [:test]},
+      {:hound, "~> 1.0"}
     ]
   end
 
