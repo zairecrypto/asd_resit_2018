@@ -1,25 +1,30 @@
-<h1>List of availale plants</h1>
+<h1>Deatils of purchase order (plant rental)</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-<%= for plant <- @plants do %>
-    <tr>
-      <td><%= plant.name %></td>
-      <td><%= plant.description %></td>
-      <td><%= plant.price %></td>
+<ul>
 
-      <td >
-        <span><%= link "Show", to: plant_path(@conn, :show, plant), class: "btn btn-default btn-xs" %></span>
-      </td>
-    </tr>
-<% end %>
-  </tbody>
-</table>
+  <li>
+    <strong>Plant name:</strong>
+    <%= @plant.name %>
+  </li>
+
+  <li>
+    <strong>Plant Description:</strong>
+    <%= @plant.description %>
+  </li>
+
+<li>
+    <strong>Start Date:</strong>
+    <%= @plant.description %>
+  </li>
+
+  <li>
+    <strong>End Date:</strong>
+    <%= @plant.description %>
+  </li>
+
+  <li>
+    <strong>Cost:</strong>
+    <%= @plant.price %>
+  </li>
+
+</ul>
