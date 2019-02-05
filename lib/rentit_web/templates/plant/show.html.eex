@@ -14,12 +14,12 @@
 
 <li>
     <strong>Start Date:</strong>
-    <%= @plant.description %>
+    <%= @plant.startdate %>
   </li>
 
   <li>
     <strong>End Date:</strong>
-    <%= @plant.description %>
+    <%= @plant.enddate %>
   </li>
 
   <li>

@@ -20,3 +20,6 @@
     <%= submit "Query plant catalog", id: "submit_button", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+
+
