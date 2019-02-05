@@ -1,0 +1,22 @@
+<h1>Enter Rental details</h1>
+
+<%= form_for @changeset, plant_path(@conn, :create), fn plant -> %>
+  <div class="form-group">
+    <%= text_input plant, :name, class: "form-control", id: "name", placeholder: "name" %>
+    <%= error_tag plant, :name %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input plant, :start, class: "form-control", id: "start", placeholder: "start date" %>
+    <%= error_tag plant, :start %>
+  </div>
+
+  <div class="form-group">
+    <%= text_input plant, :end, class: "form-control", id: "end", placeholder: "end date" %>
+    <%= error_tag plant, :end %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Query plant catalog", id: "submit_button", class: "btn btn-primary" %>
+  </div>
+<% end %>

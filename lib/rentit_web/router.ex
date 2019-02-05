@@ -16,7 +16,8 @@ defmodule RentitWeb.Router do
   scope "/", RentitWeb do
     pipe_through :browser # Use the default browser stack
 
-    get "/", PageController, :index
+    # get "/", PageController, :index
+    resources "/", PlantController
   end
 
   # Other scopes may use custom stacks.

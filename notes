@@ -1,0 +1,11 @@
+teddy- rentit$ mix phx.routes
+Compiling 1 file (.ex)
+Generated rentit app
+plant_path  GET     /          RentitWeb.PlantController :index
+plant_path  GET     /:id/edit  RentitWeb.PlantController :edit
+plant_path  GET     /new       RentitWeb.PlantController :new
+plant_path  GET     /:id       RentitWeb.PlantController :show
+plant_path  POST    /          RentitWeb.PlantController :create
+plant_path  PATCH   /:id       RentitWeb.PlantController :update
+            PUT     /:id       RentitWeb.PlantController :update
+plant_path  DELETE  /:id       RentitWeb.PlantController :delete

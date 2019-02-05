@@ -1,11 +1,7 @@
-# Script for populating the database. You can run it as:
-#
-#     mix run priv/repo/seeds.exs
-#
-# Inside the script, you can read and write to any of your
-# repositories directly:
-#
-#     Rentit.Repo.insert!(%Rentit.SomeSchema{})
-#
-# We recommend using the bang functions (`insert!`, `update!`
-# and so on) as they will fail if something goes wrong.
+
+alias Rentit.{Repo, Plant}
+
+[%{name: "Excavator", description: "15 Tone Mini excavator", price: "150.00"},
+%{name: "Excavator", description: "3 Tone Mini excavator", price: "200.00"}]
+|> Enum.map(fn plant_data -> Plant.changeset(%Plant{}, plant_data) end)
+|> Enum.each(fn changeset -> Repo.insert!(changeset) end)
