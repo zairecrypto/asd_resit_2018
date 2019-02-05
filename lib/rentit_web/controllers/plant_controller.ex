@@ -1,5 +1,6 @@
 defmodule RentitWeb.PlantController do
   use RentitWeb, :controller
+  import Ecto.Query, only: [from: 2]
 
   alias Rentit.Repo
   alias Rentit.Plant
@@ -10,10 +11,27 @@ defmodule RentitWeb.PlantController do
   end
 
   def create(conn, %{"plant" => plant_params}) do
-    # plant_params = %{"end" => "qsdqsdqsd", "name" => "qsdq", "start" => "qsd"}
-    plants = Repo.all(Plant)
-    render(conn, "update.html", plants: plants)
+    # IO.inspect plant_params["name"]
+    if String.equivalent?(plant_params["name"], "") do
+      changeset = Plant.changeset(%Plant{}, %{})
+      # put_flash(conn, :info, "User created successfully.") 
+      render conn, "index.html", changeset: changeset
+    else
+      name = plant_params["name"]
+      query = from t in Plant,
+              where: t.name == ^name
+
+      plants = Repo.all(query)
+      # put_flash(conn, :info, "User created successfully.") 
+      render(conn, "update.html", plants: plants)
+
+
+      
+    end
+
   end
+
+
 
   def show(conn, %{"id" => id}) do
     plant = Repo.get!(Plant, id)
